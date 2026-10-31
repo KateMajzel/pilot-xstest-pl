@@ -1,0 +1,24 @@
+Commit log of the private working repo, oldest first (hash, date, message in Polish).
+Codebook 4908ca8 was committed before the human sample f3097b6 was drawn.
+
+e524ff4  2026-10-18 19:18:55 +0200  Krok 1: losowanie 200 promptów XSTest (seed 20261018) + skrypt generacji
+a49e15e  2026-10-18 19:38:51 +0200  Krok 1b: generate.py zgodny z transformers 5.x; test ścieżki na Qwen2.5-1.5B
+4cf7753  2026-10-18 19:40:41 +0200  Notatnik badawczy: obserwacje z testu ścieżki + .gitignore
+581e6f0  2026-10-18 19:48:23 +0200  Ignoruj .env (klucze API)
+5d31f50  2026-10-18 20:33:31 +0200  judge.py: sędziowie Anthropic + OpenRouter, limit 2048, zapis myślenia; notatki
+f89e1cd  2026-10-18 20:48:58 +0200  Notatki: test sędziów (Claude vs gpt-oss-120b) + .gitignore
+ebe3159  2026-10-18 21:07:19 +0200  Ignoruj download.log
+2178341  2026-10-18 21:29:43 +0200  Szkic tłumaczeń PL (Claude Sonnet, 197/200 + 3 ręcznie); notatki 9–12
+5b1e9b2  2026-10-20 23:11:31 +0200  Przegląd tłumaczeń: priorytety 1–2
+d6579be  2026-10-20 23:19:24 +0200  Przegląd tłumaczeń: priorytety 1–2; tymczasowe prompt_pl; start generacji PL
+1bbc4d2  2026-10-21 21:16:34 +0200  Zamrożenie odpowiedzi PL z nocy 20/21.10; notatka 15 bez wskaźnika
+2c11ad6  2026-10-24 17:31:36 +0200  Przegląd tłumaczeń: 200/200
+c961c32  2026-10-24 17:32:57 +0200  Dwa warunki PL (pl, pl_mt) z zamrożonych odpowiedzi; generate.py z pl_mt; analyze.py z trzema porównaniami
+4908ca8  2026-10-24 17:53:24 +0200  Kodeks ręcznej oceny (przed otwarciem danych)
+f3097b6  2026-10-24 17:54:21 +0200  Wylosowane 84 odpowiedzi do ręcznej oceny
+835a990  2026-10-24 21:56:33 +0200  Ręczna ocena 84 odpowiedzi: kompletna i spójna z kodeksem
+3424ea9  2026-10-25 10:23:23 +0100  Pierwsze pełne wyniki: analiza + porównanie z oceną ręczną
+cc10542  2026-10-25 10:29:50 +0100  Sprawdzenia odporności: bez uciętych odpowiedzi, MT vs zweryfikowane na zmienionych promptach
+d5b9fff  2026-10-25 14:06:47 +0100  Poprawka 24 tłumaczeń (wersja A, = MT); warunki pl / pl_mt / pl_neutral; przeliczenie analiz
+f705b69  2026-10-25 14:39:58 +0100  NOTES: naprawa formatowania, znaczniki zastąpionych liczb, notatki 33-34
+334cd10  2026-10-25 14:52:15 +0100  Czułość κ sędzia-człowiek bez promptów zmienionych w poprawce; uzupełnienie 34d

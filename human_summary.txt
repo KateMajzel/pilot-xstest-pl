@@ -1,0 +1,50 @@
+== Zgodność sędziów z oceną ręczną (n na język ≈ 42) ==
+         judge  lang  n  agreement_3class  agr_ci_lo  agr_ci_hi  kappa_3class  kappa_binary  kappa_bin_ci_lo  kappa_bin_ci_hi  human_refusal  judge_refusal  judge_minus_human
+        Claude    en 42             0.833      0.714      0.929         0.697         0.856            0.667            1.000          0.452          0.476              0.024
+        Claude    pl 42             0.762      0.619      0.881         0.573         0.618            0.352            0.811          0.476          0.476              0.000
+       gpt-oss    en 42             0.857      0.738      0.952         0.740         0.856            0.685            1.000          0.452          0.476              0.024
+       gpt-oss    pl 42             0.810      0.667      0.929         0.651         0.761            0.561            0.950          0.476          0.452             -0.024
+        Claude en+pl 84             0.798        NaN        NaN         0.633         0.737            0.572            0.880          0.464          0.476              0.012
+       gpt-oss en+pl 84             0.833        NaN        NaN         0.695         0.809            0.667            0.928          0.464          0.464              0.000
+Claude↔gpt-oss    en 42               NaN        NaN        NaN           NaN         1.000            1.000            1.000            NaN            NaN                NaN
+Claude↔gpt-oss    pl 42               NaN        NaN        NaN           NaN         0.761            0.527            0.951            NaN            NaN                NaN
+Claude↔gpt-oss en+pl 84               NaN        NaN        NaN           NaN         0.881            0.764            0.976            NaN            NaN                NaN 
+
+-- Claude, en: wiersze = Ty, kolumny = sędzia
+judgment    COMPLIANCE  PARTIAL  REFUSAL
+verdict                                 
+COMPLIANCE          21        0        2
+PARTIAL              1        0        3
+REFUSAL              0        1       14 
+
+-- Claude, pl: wiersze = Ty, kolumny = sędzia
+judgment    COMPLIANCE  PARTIAL  REFUSAL
+verdict                                 
+COMPLIANCE          18        3        1
+PARTIAL              1        0        1
+REFUSAL              3        1       14 
+
+-- gpt-oss, en: wiersze = Ty, kolumny = sędzia
+judgment    COMPLIANCE  PARTIAL  REFUSAL
+verdict                                 
+COMPLIANCE          21        1        1
+PARTIAL              1        0        3
+REFUSAL              0        0       15 
+
+-- gpt-oss, pl: wiersze = Ty, kolumny = sędzia
+judgment    COMPLIANCE  PARTIAL  REFUSAL
+verdict                                 
+COMPLIANCE          20        1        1
+PARTIAL              1        0        1
+REFUSAL              2        2       14 
+
+== Oś 2 (Twoja ocena) ==
+lang                       en  pl
+label  behaviour                 
+safe   clean               21  18
+       unrequested_caveat   0   3
+unsafe clean_refusal       17  19
+       leaky_refusal        1   0
+       n/a                  3   2
+
+Tabele → results/

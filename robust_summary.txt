@@ -1,0 +1,30 @@
+== A. pl − en: wszystkie odpowiedzi vs bez uciętych ==
+  judge      model  label  delta_all           ci_all  delta_no_trunc      ci_no_trunc  prompts_no_trunc  sig_all  sig_no_trunc
+ Claude Bielik-11B   safe      0.016 [-0.016, +0.050]           0.021 [-0.021, +0.069]                77    False         False
+ Claude Bielik-11B unsafe      0.033 [-0.055, +0.119]           0.110 [+0.022, +0.199]                92    False          True
+ Claude   Llama-8B   safe      0.096 [+0.038, +0.164]           0.127 [+0.055, +0.202]                80     True          True
+ Claude   Llama-8B unsafe     -0.062 [-0.112, -0.016]          -0.016 [-0.062, +0.026]                95     True         False
+ Claude    Qwen-7B   safe      0.100 [+0.046, +0.156]           0.116 [+0.053, +0.180]                97     True          True
+ Claude    Qwen-7B unsafe     -0.022 [-0.066, +0.018]          -0.011 [-0.054, +0.026]                98    False         False
+gpt-oss Bielik-11B   safe      0.018 [-0.006, +0.044]           0.025 [-0.005, +0.059]                77    False         False
+gpt-oss Bielik-11B unsafe      0.074 [-0.016, +0.158]           0.170 [+0.076, +0.263]                92    False          True
+gpt-oss   Llama-8B   safe      0.106 [+0.050, +0.168]           0.141 [+0.070, +0.211]                80     True          True
+gpt-oss   Llama-8B unsafe     -0.076 [-0.130, -0.024]          -0.024 [-0.067, +0.012]                95     True         False
+gpt-oss    Qwen-7B   safe      0.094 [+0.044, +0.146]           0.093 [+0.041, +0.144]                97     True          True
+gpt-oss    Qwen-7B unsafe     -0.015 [-0.048, +0.015]          -0.009 [-0.040, +0.019]                98    False         False 
+
+== B. pl − pl_mt tylko na 0 zmienionych promptach (safe i unsafe razem) ==
+  judge      model             comparison  n_prompts  delta_pl_minus_plmt  ci_lo  ci_hi  significant
+ Claude Bielik-11B   pl_neutral−pl (safe)         18                0.056  0.000  0.167        False
+ Claude Bielik-11B pl_neutral−pl (unsafe)          6               -0.133 -0.567  0.300        False
+ Claude   Llama-8B   pl_neutral−pl (safe)         18               -0.211 -0.400 -0.056         True
+ Claude   Llama-8B pl_neutral−pl (unsafe)          6               -0.167 -0.500  0.000        False
+ Claude    Qwen-7B   pl_neutral−pl (safe)         18               -0.056 -0.233  0.122        False
+ Claude    Qwen-7B pl_neutral−pl (unsafe)          6               -0.133 -0.400  0.000        False
+gpt-oss Bielik-11B   pl_neutral−pl (safe)         18                0.056  0.000  0.167        False
+gpt-oss Bielik-11B pl_neutral−pl (unsafe)          6               -0.100 -0.500  0.267        False
+gpt-oss   Llama-8B   pl_neutral−pl (safe)         18               -0.167 -0.344 -0.022         True
+gpt-oss   Llama-8B pl_neutral−pl (unsafe)          6               -0.133 -0.400  0.000        False
+gpt-oss    Qwen-7B   pl_neutral−pl (safe)         18               -0.056 -0.211  0.111        False
+gpt-oss    Qwen-7B pl_neutral−pl (unsafe)          6               -0.167 -0.500  0.000        False
+Series([], Name: zmienione prompty wg etykiety, dtype: int64)

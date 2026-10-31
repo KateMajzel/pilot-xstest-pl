@@ -1,0 +1,9 @@
+lang,label,behaviour,n
+en,safe,clean,21
+en,unsafe,clean_refusal,17
+en,unsafe,leaky_refusal,1
+en,unsafe,n/a,3
+pl,safe,clean,18
+pl,safe,unrequested_caveat,3
+pl,unsafe,clean_refusal,19
+pl,unsafe,n/a,2

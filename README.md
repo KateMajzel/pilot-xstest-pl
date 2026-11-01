@@ -13,7 +13,7 @@
 | **Decoding changes the conclusion** | Llama's gap is +9.6 pp over 5 sampled seeds but +2.0 pp with a single greedy run. Greedy fell outside the 5-seed CI in 4 of 12 PL–EN comparisons. |
 | **Measurement artefacts are large** | Polish responses hit the 512-token limit 2–5× more often (Bielik 33.3% vs 6.5%, Llama 22.8% vs 10.8%, Qwen 10.9% vs 2.5%). As a result the *unsafe*-prompt results are unresolved. |
 
-Judge = Claude Haiku 5.5 for the CIs above. gpt-oss-120b gives the same direction (see `results/`). CIs come from a cluster bootstrap over prompts, B = 2000.
+Judge = Claude Haiku 5.5 for the CIs above. gpt-oss-120b gives the same direction (see `deltas.csv` and `robust_summary.txt`). CIs come from a cluster bootstrap over prompts, B = 2000.
 
 **Provenance.** This public repo was created fresh, so that withheld data never appears in its history. `PROVENANCE.txt` lists the commit log of my private working repo (dates and messages only). It shows that `CODEBOOK.md` was committed before the human sample was drawn.
 
@@ -37,9 +37,9 @@ Judge = Claude Haiku 5.5 for the CIs above. gpt-oss-120b gives the same directio
 | Included | Not included (and why) |
 |---|---|
 | All code (`*.py`) | Polish translations of **unsafe** prompts (could lower the barrier to misuse in Polish) |
-| Aggregate results (`results/*.csv`, `*.txt`) | Model completions, including harmful ones (safety, and model licences) |
+| Aggregate results (`*.csv`, `*.txt` in the main folder) | Model completions, including harmful ones (safety, and model licences) |
 | Codebook, lab notebook | Raw judge outputs and the manual-review spreadsheet (they contain response text) |
-| Report (`report/`) | API keys (`.env` is git-ignored; see `.env.example`) |
+| Provenance log (`PROVENANCE.txt`)| API keys (`.env` is git-ignored; see `.env.example`) |
 
 Researchers who need the withheld data for replication can contact me.
 
@@ -54,7 +54,7 @@ robustness.py                                            # without truncated; ed
 sample_manual.py → compare_human.py → sensitivity_human.py  # human vs judges
 ```
 
-### Reading `results/`
+### Reading the result files
 
 The files contain four conditions:
 - `en`: English.
@@ -82,21 +82,29 @@ The headline comparisons are `pl` vs `en`. The console summaries (`*.txt`) have 
   - The Polish uses masculine grammatical forms.
 - **Labels and the human sample:**
   - The COMPLIANCE label is ambiguous, and PARTIAL is unreliable.
-  - The Polish human sample was drawn from responses to an earlier prompt version, in which 8 of 42 pairs had a changed prompt. κ is essentially unchanged without them (see `results/human_sensitivity.txt`).
+  - The Polish human sample was drawn from responses to an earlier prompt version, in which 8 of 42 pairs had a changed prompt. κ is essentially unchanged without them (see `human_sensitivity.txt`).
 - **Not tested:** the tokenisation hypothesis.
 
 ## Related work
 
-[arXiv 2610.20221](https://arxiv.org/abs/2610.20221) reports the same direction of the language gap using one greedy run and automated translation checks only.
+[arXiv 2610.20221](https://arxiv.org/abs/2610.20221) 
+arXiv 2610.20221 (Al Sahili et al., 2026, v1) evaluates the same two models on a translated XSTest with greedy decoding, a single LLM judge (Gemma-3-12B) and automatic translation screening only; human evaluation is not yet included. They find a Polish over-refusal gap for Qwen2.5-7B (6.4% → 17.1%) but not for Llama-3.1-8B (13.6% → 12.9%). My greedy run agrees with theirs for Llama (+2.0 pp), while five sampled seeds give +9.6 pp, so decoding may explain part of the difference. Other differences between the setups (judge, translator, prompt subset, quantisation) are not yet ruled out.
 
 My earlier Polish NLP work:
 - [tokenizer-pl-32k](https://huggingface.co/KateMajzel/tokenizer-pl-32k)
 - [GoLLeM-45M-PL](https://huggingface.co/KateMajzel/GoLLeM-45M-PL)
 - [polish-tokenization-cost](https://huggingface.co/spaces/KateMajzel/polish-tokenization-cost)
 
+## Changes after 31 Oct 2026
+
+- Corrected the description of arXiv 2610.20221 after reading the full paper.
+- Fixed file references: result files are in the main folder; removed an empty `results` file and a reference to a `report/` folder that was not uploaded.
+- No results or numbers changed.
+
 ## Licence
 
 Code: MIT. XSTest prompts are © Röttger et al. under CC-BY-4.0. Any XSTest-derived material here is shared under the same licence, with attribution.
+
 
 ## Contact
 

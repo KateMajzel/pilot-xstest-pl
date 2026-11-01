@@ -86,9 +86,7 @@ The headline comparisons are `pl` vs `en`. The console summaries (`*.txt`) have 
 - **Not tested:** the tokenisation hypothesis.
 
 ## Related work
-
-[arXiv 2610.20221](https://arxiv.org/abs/2610.20221) 
-arXiv 2610.20221 (Al Sahili et al., 2026, v1) evaluates the same two models on a translated XSTest with greedy decoding, a single LLM judge (Gemma-3-12B) and automatic translation screening only; human evaluation is not yet included. They find a Polish over-refusal gap for Qwen2.5-7B (6.4% → 17.1%) but not for Llama-3.1-8B (13.6% → 12.9%). My greedy run agrees with theirs for Llama (+2.0 pp), while five sampled seeds give +9.6 pp, so decoding may explain part of the difference. Other differences between the setups (judge, translator, prompt subset, quantisation) are not yet ruled out.
+[arXiv 2610.20221](https://arxiv.org/abs/2610.20221) (Al Sahili et al., 2026, v1) evaluates the same two models on a translated XSTest with greedy decoding, a single LLM judge (Gemma-3-12B) and automatic translation screening only; human evaluation is not yet included. They find a Polish over-refusal gap for Qwen2.5-7B (6.4% → 17.1%) but not for Llama-3.1-8B (13.6% → 12.9%). My greedy run agrees with theirs for Llama (+2.0 pp), while five sampled seeds give +9.6 pp, so decoding may explain part of the difference. Other differences between the setups (judge, translator, prompt subset, quantisation) are not yet ruled out.
 
 My earlier Polish NLP work:
 - [tokenizer-pl-32k](https://huggingface.co/KateMajzel/tokenizer-pl-32k)

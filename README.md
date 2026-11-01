@@ -1,6 +1,6 @@
 # From verdict to behaviour: a pilot on the reliability of automated safety evaluations (XSTest, Polish vs English)
 
-**Status:** 12-day pilot (Oct 2026), single annotator, draft report. Written as evidence for a MATS Residency application. Numbers are final for this pilot. Findings marked *hypothesis* are not yet tested.
+**Status:** 12-day pilot (Oct 2026), single annotator, draft report. Numbers are final for this pilot. Findings marked *hypothesis* are not yet tested.
 
 **Question.** When an LLM judge scores a safety evaluation, how much of the reported number belongs to the model, and how much to the measuring instrument (judge, decoding, language, translation, token budget)?
 
